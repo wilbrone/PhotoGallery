@@ -3,17 +3,26 @@
 {% block content %}
 {{block.super}}
 
-<div>
+<div class="container">
     {% for photos in gallery %}
-    <p>
+    <h4>
         {{ photos.title }}
-        {{ photos.description }}
+    </h4>
+    <div>
+        <a>
+            <img src="{{photos.image.url}}" class="img-responsive" alt="Image" width="20%">
+        </a>
+    </div>
+    <p>
+        {{ photos.description | truncatechars:50 }}...
     </p>
+    
     {% empty %}
     <p>
         you got nothing to show
     </p>
     {% endfor %}
+        
 </div>
 
 {% endblock %}
