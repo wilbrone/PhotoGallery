@@ -1,0 +1,19 @@
+{%extends 'all-pics/base.html'%}
+
+{% block content %}
+{{block.super}}
+
+<div>
+    {% for photos in gallery %}
+    <p>
+        {{ photos.title }}
+        {{ photos.description }}
+    </p>
+    {% empty %}
+    <p>
+        you got nothing to show
+    </p>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -20,6 +20,12 @@ class Image(models.Model):
     class Meta:
         ordering = ['title']
 
+    @classmethod
+    def get_images(cls):
+        images = cls.objects.all()
+
+        return images
+
 
 class Category(models.Model):
     cat = models.CharField(max_length = 100)
