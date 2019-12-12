@@ -22,8 +22,8 @@ class Image(models.Model):
 
 
 class Category(models.Model):
-    pass
+    cat = models.CharField(max_length = 100)
 
 
 class Location(models.Model):
-    pass
+    loct = models.CharField(max_length = 100)
