@@ -9,7 +9,7 @@ from .models import Image,Category,Location
 def all_photos(request):
     gallery = Image.get_images()
 
-    return render(request, 'all-pics/pics.html', {"gallery": gallery})
+    return render(request, 'all-pics/index.html', {"gallery": gallery})
 
 
 def single_image(request, image_id):
