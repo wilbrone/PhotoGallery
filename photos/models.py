@@ -14,7 +14,7 @@ class Image(models.Model):
     def __str__(self):
         return self.title
 
-    def save_editor(self):
+    def save_image(self):
         self.save()
 
     class Meta:

@@ -11,6 +11,7 @@ def all_photos(request):
 
     return render(request, 'all-pics/pics.html', {"gallery": gallery})
 
+
 def single_image(request, image_id):
     try:
         gallery = Image.objects.get(id = image_id)
