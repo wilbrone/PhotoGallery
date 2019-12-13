@@ -1,0 +1,25 @@
+{%extends 'all-pics/base.html'%}
+
+ {% block content %}
+
+ <div class="container">
+
+   <div class="row">
+     <img src="{{gallery.image.url}}"  class="img-responsive" alt="" width="45%">
+   </div>
+
+   <div class="row">
+     <h1 class="text-center">{{gallery.title}}</h1>
+   </div>
+
+   <div class="row">
+     <p>{{gallery.post}}</p>
+   </div>
+
+   <div class="row">
+     <p>Posted {{gallery.post_date|timesince}} by Bellah</p>
+   </div>
+
+ </div>
+
+ {% endblock %}

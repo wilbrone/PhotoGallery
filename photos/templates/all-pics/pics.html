@@ -9,7 +9,7 @@
         {{ photos.title }}
     </h4>
     <div>
-        <a>
+        <a href="{% url 'image' photos.id %}">
             <img src="{{photos.image.url}}" class="img-responsive" alt="Image" width="20%">
         </a>
     </div>
