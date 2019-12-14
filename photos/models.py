@@ -26,10 +26,39 @@ class Image(models.Model):
 
         return images
 
+    
+    @classmethod
+    def get_pics_cat(cls,categ):
+        categ_images = cls.objects.filter(category = categ)
+        print (categ_images)
+
+        return categ_images
+
+    
+    @classmethod
+    def photos_by_loct(cls, loct):
+        loct_images = cls.objects.filter(location = loct)
+
+        return loct_images
 
 class Category(models.Model):
     cat = models.CharField(max_length = 100)
 
 
+    @classmethod
+    def search_category(cls,search_term):
+        category = cls.objects.filter(categ__icontains=search_term)
+
+        return category
+
+
 class Location(models.Model):
     loct = models.CharField(max_length = 100)
+
+    @classmethod
+    def get_location(cls):
+        location = cls.objects.all()
+
+        return location
+
+        
