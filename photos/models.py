@@ -47,7 +47,7 @@ class Category(models.Model):
 
     @classmethod
     def search_category(cls,search_term):
-        category = cls.objects.filter(categ__icontains=search_term)
+        category = cls.objects.filter(cat=search_term).all()
 
         return category
 
@@ -61,4 +61,3 @@ class Location(models.Model):
 
         return location
 
-        
