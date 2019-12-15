@@ -46,8 +46,7 @@ class Category(models.Model):
 
     @classmethod
     def search_category(cls,search_term):
-        category = cls.objects.filter(cat=search_term)
-        print(category)
+        category = cls.objects.get(cat__icontains=search_term)
         return category
 
 

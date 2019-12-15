@@ -3,8 +3,8 @@
 <div class="container">
 
   <div class="row">
-    {% if photoz%}
-      <h2>Found {{ photoz|length }} of searched term {{message}}</h2>
+    {% if photo%}
+      <h2>Found {{ photo|length }} of searched term {{message}}</h2>
     {% else %}
       <h2> The category {{message}} does not exist </h2>
     {% endif %}
