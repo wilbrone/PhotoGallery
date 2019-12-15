@@ -37,15 +37,18 @@ class CategoryTestClass(TestCase):
 class ImageTestClass(TestCase):
     
     def SetUp(self):
-        self.new_image = Image(title = 'BB', description ='Test Description', location = self.new_location, category = self.new_caategory, image ='/media/images/ilnur-kalimullin-kP1AxmCyEXM-unsplash2.jpg')
+        self.image = Image(title = 'BB', description ='Test Description', location = self.new_location, category = self.new_caategory, image ='/media/images/ilnur-kalimullin-kP1AxmCyEXM-unsplash2.jpg')
 
+        self.image.save_image()
 
-    def test_save(self):
-        self.new_image.save_image()
+        images = Image.objects.all()
+        self.assertTrue(len(images) > 0)
 
-        image = Image.objects.all()
-        self.assertTrue(len(image) > 0)
+    def test_delete(self):
+        Image.del_photo(self.image.id)        
 
+        images = Image.objects.all()
+        self.assertTrue(len(images) == 0)
 
 def tearDown(self):
     Location.objects.all().delete()
