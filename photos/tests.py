@@ -26,18 +26,28 @@ class CategoryTestClass(TestCase):
     def setUp(self):
         # Creating a new editor and saving it
         self.new_category = Category(cat = 'Food')
+    
+    def test_save(self):
+        self.new_category.save()
 
-        self.new_category.save_editor()
-
-
-
-    # Testing  instance
-    def test_instance(self):
-        self.assertTrue(isinstance(self.new_image,Image))
+        category = Category.objects.all()
+        self.assertTrue(len(category) > 0)
 
 
+class ImageTestClass(TestCase):
+    
+    def SetUp(self):
+        self.new_image = Image(title = 'BB', description ='Test Description', location = self.new_location, category = self.new_caategory, image ='/media/images/ilnur-kalimullin-kP1AxmCyEXM-unsplash2.jpg')
 
-    def tearDown(self):
-        Location.objects.all().delete()
-        Category.objects.all().delete()
-        Image.objects.all().delete()       
+
+    def test_save(self):
+        self.new_image.save_image()
+
+        image = Image.objects.all()
+        self.assertTrue(len(image) > 0)
+
+
+def tearDown(self):
+    Location.objects.all().delete()
+    Category.objects.all().delete()
+    Image.objects.all().delete()       
