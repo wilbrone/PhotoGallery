@@ -21,7 +21,7 @@ def single_image(request, image_id):
     return render(request, 'all-pics/img.html', {"gallery":gallery})
 
 def search_results(request):
-
+    print(category)
     if 'category' in request.GET and request.GET['category']:
         search_term = request.GET.get('category')
         print ('*********')
