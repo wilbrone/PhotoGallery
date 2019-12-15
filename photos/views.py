@@ -8,8 +8,8 @@ from .models import Image,Category,Location
 
 def all_photos(request):
     gallery = Image.get_images()
-
-    return render(request, 'all-pics/index.html', {"gallery": gallery})
+    locations = Location.get_location()
+    return render(request, 'all-pics/index.html', {"gallery": gallery, "locations":locations})
 
 
 def single_image(request, image_id):
