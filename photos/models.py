@@ -30,7 +30,6 @@ class Image(models.Model):
     @classmethod
     def get_pics_cat(cls,categ):
         categ_images = cls.objects.filter(category = categ)
-        print (categ_images)
 
         return categ_images
 
@@ -47,8 +46,8 @@ class Category(models.Model):
 
     @classmethod
     def search_category(cls,search_term):
-        category = cls.objects.filter(cat=search_term).all()
-
+        category = cls.objects.filter(cat=search_term)
+        print(category)
         return category
 
 

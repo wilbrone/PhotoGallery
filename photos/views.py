@@ -21,15 +21,14 @@ def single_image(request, image_id):
     return render(request, 'all-pics/img.html', {"gallery":gallery})
 
 def search_results(request):
-    print(category)
     if 'category' in request.GET and request.GET['category']:
         search_term = request.GET.get('category')
-        print ('*********')
+        print ('*********'+search_term)
         searched_categ = Category.search_category(search_term)
+        print ('*********'+searched_categ)
         message = f'{search_term}'
 
         searched_image = Image.get_pics_cat(searched_categ)
-        print(searched_image)
 
         return render(request, 'all-pics/search.html', {'message': message, 'photoz':searched_image})
 
