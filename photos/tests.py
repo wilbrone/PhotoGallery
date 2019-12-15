@@ -20,6 +20,9 @@ class LocationTestClass(TestCase):
         location = Location.objects.all()
         self.assertTrue(len(location) > 0)
 
+    def test_delete(self):
+        Location.del_location(self.new_category.id)
+
 
 class CategoryTestClass(TestCase):
     
@@ -33,6 +36,8 @@ class CategoryTestClass(TestCase):
         category = Category.objects.all()
         self.assertTrue(len(category) > 0)
 
+    def test_delete(self):
+        Category.del_category(self.new_category.id)
 
 class ImageTestClass(TestCase):
     
@@ -44,12 +49,11 @@ class ImageTestClass(TestCase):
         images = Image.objects.all()
         self.assertTrue(len(images) > 0)
 
-    def test_delete(self):
         Image.del_photo(self.image.id)        
 
         images = Image.objects.all()
         self.assertTrue(len(images) == 0)
-
+    
 def tearDown(self):
     Location.objects.all().delete()
     Category.objects.all().delete()

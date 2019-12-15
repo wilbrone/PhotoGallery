@@ -54,6 +54,9 @@ class Category(models.Model):
         category = cls.objects.get(cat__icontains=search_term)
         return category
 
+    @classmethod
+    def del_category(cls, id):
+        cls.objects.filter(id = id).delete()
 
 class Location(models.Model):
     loct = models.CharField(max_length = 100)
@@ -64,3 +67,6 @@ class Location(models.Model):
 
         return location
 
+    @classmethod
+    def del_location(cls, id):
+        cls.objects.filter(id = id).delete()
