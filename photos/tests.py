@@ -29,16 +29,12 @@ class CategoryTestClass(TestCase):
 
         self.new_category.save_editor()
 
-#         self.new_article= Article(title = 'Test Article',post = 'This is a random test Post',editor = self.james)
-#         self.new_article.save()
 
-#         self.new_article.tags.add(self.new_tag)
 
-        # self.new_image= Image(title = 'BB', description ='Test Description', image ='/media/images/ilnur-kalimullin-kP1AxmCyEXM-unsplash2.jpg')
-        
-#     def test_get_news_today(self):
-#         today_news = Article.todays_news()
-#         self.assertTrue(len(today_news)>0)
+    # Testing  instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_image,Image))
+
 
 
     def tearDown(self):
