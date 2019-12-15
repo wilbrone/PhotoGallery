@@ -40,6 +40,11 @@ class Image(models.Model):
 
         return loct_images
 
+    @classmethod
+    def del_photo(cls, id):
+        cls.objects.filter(id = id).delete()
+
+
 class Category(models.Model):
     cat = models.CharField(max_length = 100)
 
