@@ -1,0 +1,14 @@
+{% extends 'all-pics/base.html' %}
+
+{% block content %}
+{{block.super}}
+
+<p>
+    thi page works
+</p>
+{% for images in pics_by_location %}
+<div>
+    {{ images.title }}
+</div>
+{% endfor %}
+{% endblock %}

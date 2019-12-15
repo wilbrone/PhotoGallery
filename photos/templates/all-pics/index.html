@@ -22,7 +22,11 @@
         you got nothing to show
     </p>
     {% endfor %}
-        
+    <div>
+        {% for loc in locations %}
+        <a href="{% url 'location' loc.id %}">{{ loc.loct }}</a>
+        {% endfor %}
+    </div> 
 </div>
 
 {% endblock %}

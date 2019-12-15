@@ -34,3 +34,9 @@ def search_results(request):
         message = 'You havent searched for any item'
         return render(request, 'all-pics/search.html', {'message':message})
 
+
+def location_pics(request,loct_id):
+    
+    pics_by_location = Image.pics_by_loct(loct_id)
+
+    return render(request, 'all-pics/location.html', {'pics_by_location':pics_by_location})
