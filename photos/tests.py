@@ -20,8 +20,8 @@ class LocationTestClass(TestCase):
         location = Location.objects.all()
         self.assertTrue(len(location) > 0)
 
-    def test_delete(self):
-        Location.del_location(self.new_category.id)
+        locations = Location.del_location(self.new_location.id)
+        self.assertFalse(len(locations) > 0)
 
 
 class CategoryTestClass(TestCase):
@@ -36,8 +36,8 @@ class CategoryTestClass(TestCase):
         category = Category.objects.all()
         self.assertTrue(len(category) > 0)
 
-    def test_delete(self):
-        Category.del_category(self.new_category.id)
+        categories = Category.del_category(self.new_category.id)
+        self.assertTrue(len(categories) == 0)
 
 class ImageTestClass(TestCase):
     
