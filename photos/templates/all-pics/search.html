@@ -10,18 +10,5 @@
     {% else %}
       <h2> {{message}} </h2>
     {% endif %}
-
   </div>
-
-  <div class="row">
-
-  {% if photoz %}
-    {% for photo in photoz %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{photo.title}}</h1>
-      </div>
-    {% endfor %}
-  {% endif %}
-  </div>
-</div>
 {% endblock %}
