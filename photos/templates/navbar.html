@@ -11,8 +11,11 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="">The Photo Gallery</a>
       <a class="navbar-brand" href="{% url 'allPhotos' %}">Home</a>
-    </div>
 
+      {% for loc in locations %}
+        <a href="{% url 'location' loc.id %}" style="text-decoration: none; font-size: 1.5em; color: black;">{{ loc.loct }}</a>&nbsp;
+      {% endfor %}
+    </div>
     <!-- Adding a search form  -->
     <div class="col-sm-4 col-md-4 navbar-right">
       <!-- forms -->

@@ -12,6 +12,12 @@ def all_photos(request):
     return render(request, 'all-pics/index.html', {"gallery": gallery, "locations":locations})
 
 
+def get_locations(request):
+    locations = Location.get_location()
+
+    return render(request, 'navbar.html', {"locations":locations})
+
+
 def single_image(request, image_id):
     try:
         gallery = Image.objects.get(id = image_id)

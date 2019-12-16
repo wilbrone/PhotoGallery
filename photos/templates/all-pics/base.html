@@ -17,7 +17,10 @@
 <body>
     {% include "navbar.html" %}
 
-    {% block content %} <h1>Photo Gallery</h1> {%endblock%}
+    {% block content %}
+        <div class="alert alert-primary" role="alert">Categories available are Sports &nbsp; Entertainment &nbsp; Food</div> 
+        <h1>Photo Gallery</h1> 
+    {%endblock%}
 
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/4.4.1/jquery.min.js"></script>

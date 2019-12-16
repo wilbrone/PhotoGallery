@@ -2,24 +2,16 @@
 
  {% block content %}
 
- <div class="container">
+  <div class="container">
 
-   <div class="row">
-     <img src="{{gallery.image.url}}"  class="img-responsive" alt="" width="45%">
-   </div>
-
-   <div class="row">
-     <h1 class="text-center">{{gallery.title}}</h1>
-   </div>
-
-   <div class="row">
-     <p>{{gallery.description}}</p>
-   </div>
-
-   <div class="row">
-     <p>Posted {{gallery.post_date|timesince}} by Wilbrone</p>
-   </div>
-
- </div>
+    <div class="row">
+      <div class="col-6">
+        <h1 class="">{{gallery.title}}</h1>
+        <img src="{{gallery.image.url}}"  class="img-responsive" alt="" width="45%">
+        <p>{{gallery.description}}</p>
+        <p>Posted {{gallery.post_date|timesince}} by Wilbrone</p>
+      </div>
+    </div>
+  </div>
 
  {% endblock %}
